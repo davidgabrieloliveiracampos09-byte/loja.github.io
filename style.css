@@ -1,0 +1,73 @@
+:root{--ink:#12141c;--paper:#f4f5f7;--red:#d7263d;--line:#d9dce3;--mute:#5d6270}
+*{box-sizing:border-box;margin:0}
+body{font-family:'Zen Kaku Gothic New',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.5}
+h1,h2,h3,.logo{font-family:'Dela Gothic One',Impact,sans-serif;font-weight:400}
+button,input,select{font:inherit}
+button{cursor:pointer;border:2px solid var(--ink);background:#fff;color:var(--ink);padding:.45rem .9rem;border-radius:6px;font-weight:700}
+button:hover{background:var(--ink);color:#fff}
+button.red{background:var(--red);border-color:var(--red);color:#fff}
+button.red:hover{background:#a81a2c;border-color:#a81a2c}
+button:disabled{opacity:.4;cursor:not-allowed}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+input,select{border:2px solid var(--ink);border-radius:6px;padding:.45rem .7rem;background:#fff;width:100%}
+header{background:var(--ink);color:#fff;position:sticky;top:0;z-index:10;display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;padding:.7rem 1.2rem}
+.logo{font-size:1.4rem;cursor:pointer;margin-right:auto}
+.logo span{color:var(--red)}
+header input{max-width:260px;border-color:#fff}
+header button{background:transparent;color:#fff;border-color:#fff;padding:.35rem .7rem}
+header button:hover{background:#fff;color:var(--ink)}
+#nav{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
+main{max-width:1150px;margin:0 auto;padding:1.2rem}
+.hero{position:relative;overflow:hidden;background:var(--ink);color:#fff;border-radius:10px;padding:2.2rem 1.6rem;margin-bottom:1.4rem}
+.hero::after{content:"漫画";position:absolute;right:-.5rem;top:-1.5rem;font-size:9rem;font-family:'Dela Gothic One',sans-serif;color:var(--red);opacity:.85;line-height:1}
+.hero h1{font-size:clamp(1.6rem,4vw,2.6rem);max-width:15ch;position:relative;z-index:1}
+.hero p{margin-top:.6rem;color:#c8ccd8;max-width:38ch;position:relative;z-index:1}
+.chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.1rem}
+.chips button.on{background:var(--red);border-color:var(--red);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:1.1rem}
+.card{background:#fff;border:2px solid var(--ink);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+.cover{aspect-ratio:3/4;position:relative;padding:.8rem;display:flex;justify-content:flex-end;align-items:flex-start;color:#fff;
+background:radial-gradient(circle at 1px 1px,rgba(0,0,0,.22) 1px,transparent 1.6px) 0 0/6px 6px,linear-gradient(160deg,var(--a),var(--b))}
+.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cover.has-img b{display:none}
+.cover b{writing-mode:vertical-rl;font-family:'Dela Gothic One',sans-serif;font-weight:400;font-size:1.25rem;max-height:100%;text-shadow:2px 2px 0 rgba(0,0,0,.5)}
+.cover small{z-index:1;position:absolute;left:.6rem;bottom:.6rem;background:#fff;color:var(--ink);padding:.05rem .5rem;border-radius:20px;font-weight:700;font-size:.72rem}
+.info{padding:.7rem;display:flex;flex-direction:column;gap:.2rem;flex:1}
+.info h3{font-size:.95rem}
+.info .by{color:var(--mute);font-size:.82rem}
+.price{font-weight:700;font-size:1.1rem}
+.low{color:var(--red);font-size:.78rem;font-weight:700}
+.info button{margin-top:auto}
+aside{position:fixed;top:0;right:0;height:100%;width:min(400px,100%);background:#fff;border-left:3px solid var(--ink);z-index:20;transform:translateX(105%);transition:transform .25s;display:flex;flex-direction:column}
+aside.open{transform:none}
+aside header{position:static;justify-content:space-between}
+#items{flex:1;overflow:auto;padding:1rem}
+.it{display:flex;gap:.7rem;align-items:center;padding:.6rem 0;border-bottom:1px solid var(--line)}
+.it .cover{width:48px;flex:none;padding:0}
+.it .cover b,.it .cover small{display:none}
+.it div:nth-child(2){flex:1;font-size:.9rem}
+.qty{display:flex;gap:.3rem;align-items:center}
+.qty button{padding:0 .5rem}
+.foot{padding:1rem;border-top:2px solid var(--ink)}
+.foot .tot{display:flex;justify-content:space-between;font-size:1.2rem;font-weight:700;margin-bottom:.7rem}
+.foot button{width:100%}
+.panel{background:#fff;border:2px solid var(--ink);border-radius:8px;padding:1rem;margin-bottom:1.2rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-bottom:1.2rem}
+.stats .panel{margin:0}
+.stats strong{display:block;font-size:1.5rem;font-family:'Dela Gothic One',sans-serif;font-weight:400}
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem;align-items:end}
+label{font-size:.8rem;font-weight:700;display:block}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{text-align:left;padding:.5rem;border-bottom:1px solid var(--line);white-space:nowrap}
+td button{padding:.15rem .5rem;font-size:.8rem}
+dialog{border:3px solid var(--ink);border-radius:10px;padding:1.4rem;width:min(380px,92%);margin:auto}
+dialog::backdrop{background:rgba(18,20,28,.7)}
+dialog form{display:grid;gap:.8rem}
+.tabs{display:flex;gap:.5rem}
+.tabs button.on{background:var(--ink);color:#fff}
+#err{color:var(--red);font-weight:700;font-size:.85rem;min-height:1.2em}
+#toast{position:fixed;bottom:1.2rem;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:.6rem 1.1rem;border-radius:8px;z-index:50;opacity:0;pointer-events:none;transition:opacity .2s}
+#toast.show{opacity:1}
+.empty{text-align:center;color:var(--mute);padding:2rem}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}

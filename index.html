@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mangá Dō | Loja de Mangás</title>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo" onclick="go('shop')">Mangá<span>Dō</span></div>
+  <input id="busca" type="search" placeholder="Buscar título ou autor" oninput="q=this.value;go('shop')" aria-label="Buscar">
+  <div id="nav"></div>
+</header>
+<main id="app"></main>
+
+<aside id="cart" aria-label="Carrinho">
+  <header><h2>Seu carrinho</h2><button onclick="toggleCart(false)">Fechar</button></header>
+  <div id="items"></div>
+  <div class="foot"><div class="tot"><span>Total</span><span id="total">R$ 0,00</span></div>
+  <button class="red" onclick="checkout()">Finalizar compra</button></div>
+</aside>
+
+<dialog id="auth">
+  <form onsubmit="doAuth(event)">
+    <div class="tabs"><button type="button" id="t-login" onclick="setMode('login')">Entrar</button><button type="button" id="t-reg" onclick="setMode('reg')">Criar conta</button></div>
+    <div id="f-name"><label>Nome<input id="a-name"></label></div>
+    <label>E-mail<input id="a-email" type="email" required></label>
+    <label>Senha<input id="a-pass" type="password" minlength="6" required></label>
+    <div id="err"></div>
+    <button class="red" id="a-go">Entrar</button>
+    <button type="button" onclick="$('#auth').close()">Cancelar</button>
+  </form>
+</dialog>
+<div id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
